@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  background-image: url("/assets/bg.png");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#wrapper {
+  background-image: url("/assets/app_bg.png");
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#template {
+  position: absolute;
+}
