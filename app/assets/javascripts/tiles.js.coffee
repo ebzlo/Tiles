@@ -66,7 +66,7 @@ $ ->
 
       @load_next()
 
-      setInterval @load_next, 9000
+      setInterval @load_next, 8000
 
   window.Tiles = new TilesApp
 
