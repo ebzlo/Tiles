@@ -1,5 +1,4 @@
 $ ->
-
   class TilesApp
     wrapper: $("#wrapper")
     
@@ -34,7 +33,7 @@ $ ->
 
       if slide
         image.addClass("tile")
-        image.delay(3000).fadeIn(1000)
+        image.delay(3000).fadeIn("slow")
         image.css("margin-left", @wrapper_width * -0.095)
 
         if $("img.tile").length > 1
@@ -52,6 +51,8 @@ $ ->
         image.hide().fadeIn "slow"
 
     load: =>
+      $("#loading").remove()
+
       @calculate_dimensions()
       @cur_image = -1
       Tiles.load_image "1.png", false
@@ -65,11 +66,43 @@ $ ->
 
       @load_next()
 
-      setInterval @load_next, 5000
+      setInterval @load_next, 9000
 
   window.Tiles = new TilesApp
 
   $(window).on "resize", =>
     Tiles.calculate_dimensions()
 
-  Tiles.load()
+  ready = 0
+
+  $("#loading").css("margin-top", $(window).width() * 0.23)
+
+  $("<img src=\"/assets/2.png\" />").load ->
+    ready = ready + 1
+
+    if ready == 5
+      Tiles.load()
+
+  $("<img src=\"/assets/4.png\" />").load ->
+    ready = ready + 1
+
+    if ready == 5
+      Tiles.load()
+
+  $("<img src=\"/assets/3.png\" />").load ->
+    ready = ready + 1
+
+    if ready == 5
+      Tiles.load()
+
+  $("<img src=\"/assets/5.png\" />").load ->
+    ready = ready + 1
+
+    if ready == 5
+      Tiles.load()
+
+  $("<img src=\"/assets/5.png\" />").load ->
+    ready = ready + 1
+
+    if ready == 5
+      Tiles.load()

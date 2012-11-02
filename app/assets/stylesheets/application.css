@@ -30,3 +30,11 @@ body {
 #template {
   position: absolute;
 }
+
+#loading {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
